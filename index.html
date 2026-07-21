@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AshSpire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <img class="topbar-logo" src="images/logo.png" alt="AshSpire logo">
+                <span>AshSpire</span>
+            </div>
+            <nav class="topnav">
+                <span class="topbar-status">
+                    <span id="server-status-pill" class="status-pill status-loading">Checking server…</span>
+                </span>
+                <a href="https://discord.gg/VxBHD4fYFd">Discord</a>
+                <a href="https://ko-fi.com/ashspiresmp">Ko-fi</a>
+                <a href="https://www.youtube.com/@ashspiresmp">YouTube</a>
+            </nav>
+        </header>
+
+        <section class="highlights">
+            <div class="highlight-card">
+                <h2>Community</h2>
+                <p>Friendly players, active staff, and regular events make every session feel alive.</p>
+            </div>
+            <div class="highlight-card">
+                <h2>Economy</h2>
+                <p>Trade, earn, and grow with server-wide markets built for long-term progression.</p>
+            </div>
+        </section>
+
+        <section class="versions">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Latest release</p>
+                    <h2>Download Newest Version</h2>
+                </div>
+            </div>
+            <div id="version-list" class="version-list">
+                Loading versions...
+            </div>
+            <div class="section-header section-subheader">
+                <div>
+                    <p class="eyebrow">Previous releases</p>
+                    <h2>Old versions</h2>
+                </div>
+            </div>
+            <div id="older-version-list" class="version-list">
+            </div>
+        </section>
+    </div>
+
+    <script src="versions.js"></script>
+</body>
+
+</html>
