@@ -44,10 +44,8 @@
                     <h2>Community Showcase</h2>
                 </div>
             </div>
-            <div class="gallery" style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;">
-                <img src="images/top.png" alt="showcase 1" style="height:160px;border-radius:8px;object-fit:cover;">
-                <img src="images/logo.png" alt="showcase 2" style="height:160px;border-radius:8px;object-fit:cover;">
-                <img src="images/top.png" alt="showcase 3" style="height:160px;border-radius:8px;object-fit:cover;">
+            <div class="gallery" aria-live="polite">
+                <!-- Items will be loaded from showcase.json by scripts/showcase.js -->
             </div>
         </section>
 
@@ -100,6 +98,7 @@
     </div>
 
     <script src="versions.js"></script>
+    <script src="scripts/showcase.js" defer></script>
 </body>
 
 </html>

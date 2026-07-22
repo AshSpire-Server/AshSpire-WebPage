@@ -407,3 +407,33 @@ details.version-changelog[open] summary::after {
         align-items: flex-start;
     }
 }
+
+/* Showcase gallery styles */
+.gallery {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+.gallery-item {
+    min-width: 260px;
+    height: 160px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.28);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 980px) {
+    .gallery-item { min-width: 60%; }
+}
+@media (max-width: 520px) {
+    .gallery-item { min-width: 80%; }
+}
