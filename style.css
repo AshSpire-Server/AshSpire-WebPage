@@ -98,9 +98,9 @@ button {
 
 .section-header h2 {
     margin: 0;
-    font-size: clamp(3rem, 2.5vw, 4.4rem);
-    line-height: 0.95;
-    letter-spacing: -0.05em;
+    font-size: clamp(2.2rem, 2.2vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
 }
 
 .section-header.section-subheader {
