@@ -414,6 +414,12 @@ details.version-changelog[open] summary::after {
     gap: 12px;
     overflow-x: auto;
     padding-bottom: 8px;
+   scroll-behavior: smooth;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+.gallery::-webkit-scrollbar {
+   display: none;
 }
 .gallery-item {
     min-width: 260px;
@@ -471,4 +477,52 @@ details.version-changelog[open] summary::after {
 }
 @media (max-width: 520px) {
     .gallery-item { min-width: 80%; }
+}
+
+.team-wrapper {
+    position: relative;
+}
+
+.team-grid {
+    display: flex !important;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 10px 18px;
+    margin-top: 18px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.team-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.team-member {
+    min-width: 160px;
+    flex: 0 0 auto;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.team-member .team-name {
+    font-weight: 700;
+    color: #eef2f1;
+}
+
+.team-member .team-role {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #cfe8df;
 }

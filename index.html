@@ -35,51 +35,86 @@
                 <p>Trade, earn, and grow with server-wide markets built for long-term progression.</p>
             </div>
         </section>
-
-        <!-- Showcase / Gallery -->
+ 
         <section class="showcase">
-            <div class="section-header">
-                <div>
-                    <p class="eyebrow">Showcase</p>
-                    <h2>Community Showcase</h2>
-                </div>
-            </div>
-            <div class="gallery" aria-live="polite">
-                <!-- Items will be loaded from showcase.json by scripts/showcase.js -->
-            </div>
+           <div class="section-header">
+               <div>
+                   <p class="eyebrow">Showcase</p>
+                   <h2>Community Showcase</h2>
+               </div>
+           </div>
+           <div class="gallery" aria-live="polite">
+               Loading community highlights...
+           </div>
         </section>
-
-        <!-- Our Team -->
-        <section class="our-team" style="padding-top:32px;padding-bottom:18px;">
-            <div class="section-header">
-                <div>
-                    <p class="eyebrow">Our Team</p>
-                    <h2>Meet the team</h2>
-                </div>
-            </div>
-            <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-top:18px;">
-                <div class="team-member" style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;text-align:center;">
-                    <img src="images/logo.png" alt="Staff 1" style="width:80px;height:80px;border-radius:8px;display:block;margin:0 auto 8px;">
-                    <div style="font-weight:700">Server Admin</div>
-                    <div style="font-size:0.9rem;color:#cfe8df">Lead</div>
-                </div>
-                <div class="team-member" style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;text-align:center;">
-                    <img src="images/logo.png" alt="Staff 2" style="width:80px;height:80px;border-radius:8px;display:block;margin:0 auto 8px;">
-                    <div style="font-weight:700">Moderator</div>
-                    <div style="font-size:0.9rem;color:#cfe8df">Community</div>
-                </div>
-                <div class="team-member" style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;text-align:center;">
-                    <img src="images/logo.png" alt="Staff 3" style="width:80px;height:80px;border-radius:8px;display:block;margin:0 auto 8px;">
-                    <div style="font-weight:700">Developer</div>
-                    <div style="font-size:0.9rem;color:#cfe8df">Tech</div>
-                </div>
-            </div>
+ 
+        <section class="our-team">
+           <div class="section-header">
+               <div>
+                   <p class="eyebrow">Our Team</p>
+                   <h2>Meet the team</h2>
+               </div>
+           </div>
+           <div class="team-wrapper">
+               <div class="team-grid" aria-label="Staff showcase">
+                   <div class="team-member">
+                       <img src="images/staff-logo/ItzByc.png" alt="ItzByc">
+                       <div class="team-name">ItzByc</div>
+                       <div class="team-role">Owner</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/ConjaBz.png" alt="ConjaBz">
+                       <div class="team-name">ConjaBz</div>
+                       <div class="team-role">Co-Owner</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/JollyrancherXVII.png" alt="JollyrancherXVII">
+                       <div class="team-name">JollyrancherXVII</div>
+                       <div class="team-role">Staff Lead</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/11CosmicCloud11.png" alt="11CosmicCloud11">
+                       <div class="team-name">11CosmicCloud11</div>
+                       <div class="team-role">Dev</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/bonskiii.png" alt="bonskiii">
+                       <div class="team-name">bonskiii</div>
+                       <div class="team-role">Dev</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/DLBM666.png" alt="DLBM666">
+                       <div class="team-name">DLBM666</div>
+                       <div class="team-role">Moderating Lead</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/CubeReal.png" alt="CubeReal">
+                       <div class="team-name">CubeReal</div>
+                       <div class="team-role">Staff</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/Mystipet.png" alt="Mystipet">
+                       <div class="team-name">Mystipet</div>
+                       <div class="team-role">Staff</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/Phobisch_gurkeyt.png" alt="Phobisch Gurkeyt">
+                       <div class="team-name">Phobisch Gurkeyt</div>
+                       <div class="team-role">Staff</div>
+                   </div>
+                   <div class="team-member">
+                       <img src="images/staff-logo/Nadav_ed.png" alt="Nadav Ed">
+                       <div class="team-name">Nadav Ed</div>
+                       <div class="team-role">Moderator</div>
+                   </div>
+               </div>
+           </div>
         </section>
-
+ 
         <section class="versions">
-            <div class="section-header">
-                <div>
-                    <p class="eyebrow">Latest release</p>
+           <div class="section-header">
+               <div>
+                   <p class="eyebrow">Latest release</p>
                     <h2>Download Newest Version</h2>
                 </div>
             </div>
@@ -98,7 +133,7 @@
     </div>
 
     <script src="versions.js"></script>
-    <script src="scripts/showcase.js" defer></script>
+    <script src="scripts/showcase.js"></script>
 </body>
 
 </html>
