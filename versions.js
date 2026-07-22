@@ -40,15 +40,8 @@ function renderMinecraftStatus(data) {
         return;
     }
 
-    // Prefer the explicit list of player names when available and count unique names there.
-    // Fallback to the numeric 'online' field if the list is absent (some servers hide the sample list).
-    let playersOnline = 0;
+    const playersOnline = data.players?.online ?? 0;
     const playersMax = data.players?.max ?? 0;
-    if (Array.isArray(data.players?.list) && data.players.list.length > 0) {
-        playersOnline = new Set(data.players.list).size; // guard against duplicate names in the list
-    } else {
-        playersOnline = data.players?.online ?? 0;
-    }
 
     serverStatusPill.textContent = `Online · ${playersOnline}/${playersMax}`;
     serverStatusPill.className = "status-pill status-online";
