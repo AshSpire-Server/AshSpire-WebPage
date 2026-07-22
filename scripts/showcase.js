@@ -84,15 +84,100 @@
   const teamWrapper = document.querySelector('.team-wrapper');
   const teamUpdate = setupScrollSection(teamGrid, teamWrapper);
 
+  // Create overlay for expanded images
+  const overlay = document.createElement('div');
+  overlay.className = 'gallery-overlay';
+  overlay.innerHTML = `
+    <button class="gallery-overlay-close" aria-label="Close expanded view">✕</button>
+    <button class="gallery-overlay-arrow gallery-overlay-prev" aria-label="Previous image">◀</button>
+    <div class="gallery-overlay-content">
+      <img class="gallery-overlay-img" src="" alt="">
+      <div class="gallery-overlay-caption"></div>
+    </div>
+    <button class="gallery-overlay-arrow gallery-overlay-next" aria-label="Next image">▶</button>
+  `;
+  document.body.appendChild(overlay);
+
+  const overlayImg = overlay.querySelector('.gallery-overlay-img');
+  const overlayCaption = overlay.querySelector('.gallery-overlay-caption');
+  const overlayClose = overlay.querySelector('.gallery-overlay-close');
+  const overlayPrev = overlay.querySelector('.gallery-overlay-prev');
+  const overlayNext = overlay.querySelector('.gallery-overlay-next');
+
+  let allItems = [];
+  let currentImageIndex = 0;
+
+  function openImageModal(src, alt, description, index) {
+    currentImageIndex = index;
+    overlayImg.src = src;
+    overlayImg.alt = alt;
+    overlayCaption.textContent = description;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateArrowButtons();
+  }
+
+  function closeImageModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateArrowButtons() {
+    overlayPrev.style.opacity = currentImageIndex === 0 ? '0.3' : '1';
+    overlayPrev.style.pointerEvents = currentImageIndex === 0 ? 'none' : 'auto';
+    overlayNext.style.opacity = currentImageIndex === allItems.length - 1 ? '0.3' : '1';
+    overlayNext.style.pointerEvents = currentImageIndex === allItems.length - 1 ? 'none' : 'auto';
+  }
+
+  async function showImage(index) {
+    if (index < 0 || index >= allItems.length) return;
+    const item = allItems[index];
+    let description = item.alt;
+    
+    try {
+      const txtPath = item.src.replace('.png', '.txt').replace('images/showcase/', 'images/showcase/');
+      const res = await fetch(txtPath);
+      if (res.ok) {
+        description = await res.text();
+      }
+    } catch (err) {
+      console.log('Using alt text as description');
+    }
+    
+    openImageModal(item.src, item.alt, description, index);
+  }
+
+  overlayClose.addEventListener('click', closeImageModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeImageModal();
+  });
+
+  overlayPrev.addEventListener('click', () => {
+    if (currentImageIndex > 0) showImage(currentImageIndex - 1);
+  });
+
+  overlayNext.addEventListener('click', () => {
+    if (currentImageIndex < allItems.length - 1) showImage(currentImageIndex + 1);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeImageModal();
+    if (e.key === 'ArrowLeft' && currentImageIndex > 0) showImage(currentImageIndex - 1);
+    if (e.key === 'ArrowRight' && currentImageIndex < allItems.length - 1) showImage(currentImageIndex + 1);
+  });
+
   // Load items
   if (gallery) {
     try {
       const res = await fetch('showcase.json');
       if (!res.ok) throw new Error('Failed to fetch showcase.json');
       const items = await res.json();
+      allItems = items;
 
       gallery.innerHTML = '';
-      for (const it of items) {
+      for (let idx = 0; idx < items.length; idx++) {
+        const it = items[idx];
         const item = document.createElement('div');
         item.className = 'gallery-item';
 
@@ -103,6 +188,11 @@
 
         item.appendChild(img);
         gallery.appendChild(item);
+
+        // Add click handler to open modal with index
+        item.addEventListener('click', () => {
+          showImage(idx);
+        });
       }
 
       requestAnimationFrame(() => { galleryUpdate?.(); });

@@ -1,34 +1,34 @@
-﻿[
+[
     {
         "src":  "images/showcase/1.png",
-        "alt":  "1"
+        "alt":  "Community Build"
     },
     {
         "src":  "images/showcase/2.png",
-        "alt":  "2"
+        "alt":  "Server Landscape"
     },
     {
         "src":  "images/showcase/3.png",
-        "alt":  "3"
+        "alt":  "Trading Hub"
     },
     {
         "src":  "images/showcase/4.png",
-        "alt":  "4"
+        "alt":  "Base Architecture"
     },
     {
         "src":  "images/showcase/5.png",
-        "alt":  "5"
+        "alt":  "Community Event"
     },
     {
         "src":  "images/showcase/6.png",
-        "alt":  "6"
+        "alt":  "Underground Mine"
     },
     {
         "src":  "images/showcase/7.png",
-        "alt":  "7"
+        "alt":  "Server Spawn"
     },
     {
         "src":  "images/showcase/8.png",
-        "alt":  "8"
+        "alt":  "Adventure Scene"
     }
 ]
