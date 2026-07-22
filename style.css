@@ -218,7 +218,19 @@ button {
     margin-bottom: 32px;
 }
 
+/* background video */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: blur(0.6px) brightness(0.55) saturate(0.95);
+}
+
 .hero::before {
+    /* fallback background image if video is missing */
     content: "";
     position: absolute;
     inset: 0;
@@ -250,6 +262,19 @@ button {
     font-family: 'Press Start 2P', monospace;
     text-transform: uppercase;
     letter-spacing: 0.14em;
+}
+
+.hero-logo {
+    display: block;
+    margin: 0 auto 8px;
+    width: 120px;
+    height: auto;
+}
+
+/* pixelated render for pixel-art assets */
+.pixelated {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
 }
 
 .hero-title {
@@ -285,6 +310,45 @@ button {
     background: rgba(255,255,255,0.06);
     color: #fff;
     border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* hero CTA image at bottom */
+.hero-cta-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 28px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-cta {
+    width: 260px;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: transform 0.9s cubic-bezier(.2,.9,.2,1), opacity 0.9s ease;
+    will-change: transform, opacity;
+}
+
+/* reveal animation when page loads (simple JS not required; browsers will show transition after DOM paint) */
+.hero-cta.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* subtle float */
+@keyframes heroFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+.hero-cta.pixelated {
+    animation: heroFloat 4.2s ease-in-out infinite;
 }
 
 /* Adapt existing highlight grid after hero */

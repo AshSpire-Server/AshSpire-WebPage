@@ -39,14 +39,28 @@
         </header>
 
         <section class="hero">
+            <!-- Background video (falls back to hero::before image if not available) -->
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="videos/background.mp4" type="video/mp4">
+            </video>
+
             <div class="hero-overlay"></div>
+
             <div class="hero-inner">
+                <img src="images/logo.png" alt="AshSpire" class="hero-logo pixelated" width="140" height="140">
                 <h1 class="hero-title">A cooperative Minecraft experience</h1>
                 <p class="hero-sub">Build, trade and create together in a fully customized world with missions, economy, and reliability at its core.</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="https://discord.gg/VxBHD4fYFd">Join Discord</a>
                     <a class="button button-secondary" href="#version-list">Download</a>
                 </div>
+            </div>
+
+            <!-- Large CTA image at bottom (like Brassworks hero button) -->
+            <div class="hero-cta-wrapper">
+                <a target="_blank" href="https://modrinth.com/server/brassworks-smp-official-server" class="hero-cta-link">
+                    <img src="buttons/hero-button/button1.png" alt="Join Server" class="hero-cta pixelated">
+                </a>
             </div>
         </section>
 
