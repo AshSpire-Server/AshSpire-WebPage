@@ -559,3 +559,52 @@ details.version-changelog[open] summary::after {
         align-items: flex-start;
     }
 }
+
+/* Modpack section */
+.modpack {
+    padding: 48px 0;
+    background: linear-gradient(180deg, rgba(6,8,10,0.62), rgba(8,10,12,0.6));
+}
+.modpack .modpack-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+.modpack .section-header-title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+.modpack-sub {
+    color: rgba(230,230,228,0.85);
+    margin-bottom: 22px;
+}
+.modpack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+}
+.modpack-media img { width: 100%; border-radius: 12px; display:block; }
+.modpack-steps ol { text-align: left; margin: 0 0 12px; color: #cdd9d6; }
+.modpack-actions { display:flex; gap:12px; justify-content:flex-start; margin-top:12px; }
+
+/* Seasons */
+.seasons { padding: 56px 0; }
+.seasons-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.season-card { background: rgba(12,12,14,0.9); border-radius: 12px; overflow: hidden; display:flex; gap:16px; align-items:stretch; }
+.season-media img { width: 140px; height: 140px; object-fit: contain; background: rgba(255,255,255,0.02); }
+.season-body { padding: 18px; color: #e6eceb; }
+.season-actions { margin-top:12px; display:flex; gap:10px; }
+
+/* Gallery */
+.gallery { padding: 48px 0; }
+.gallery-track { display:flex; gap:16px; overflow-x:auto; padding-bottom:6px; }
+.gallery-item { min-width: 56%; max-width: 720px; flex:0 0 56%; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* small screens adjustments */
+@media (max-width: 980px) {
+    .modpack-grid { grid-template-columns: 1fr; }
+    .seasons-grid { grid-template-columns: 1fr; }
+    .gallery-item { min-width: 80%; }
+}
